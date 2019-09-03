@@ -1,0 +1,27 @@
+.breadcrumbs{
+    height:170px;
+    background-color: #0486db;
+    color: #fff;
+}
+div.breadcrumbs a{
+    color: #fff;
+}
+div.breadcrumbs div.container{
+    padding-top: 25px;
+}
+table {
+    width: 100%;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+  

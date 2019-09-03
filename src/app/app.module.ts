@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { StationsComponent } from './components/mainComponents/stations/stations
 import { ShippingComponent } from './components/mainComponents/shipping/shipping.component';
 import { ReportsComponent } from './components/mainComponents/reports/reports.component';
 import { ConfigurationsComponent } from './components/mainComponents/configurations/configurations.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,14 @@ import { ConfigurationsComponent } from './components/mainComponents/configurati
     ReportsComponent,
     ConfigurationsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  imports: [BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule  // material
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

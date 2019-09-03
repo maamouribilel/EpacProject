@@ -1,10 +1,18 @@
+
+<!-- TOP NAV START-->
 <nav
-  class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+  class="navbar navbar-expand navbar-light bg-white topbar static-top"
 >
+    <!-- BRAND -->
+<a class="navbar-brand" href="#">
+  <img src="../../../../assets/img/PaceX.png" alt="PaceX" style="height: 45px;">
+</a>
+ <!-- BRAND -->
+
   <!-- Topbar Navbar -->
   <ul class="navbar-nav ml-auto">
     <div class="topbar-divider d-none d-sm-block"></div>
-    <!-- Nav Item - Messages -->
+    <!-- Nav Item - Notifications -->
     <li class="nav-item dropdown no-arrow mx-1">
       <a
         class="nav-link dropdown-toggle"
@@ -15,17 +23,17 @@
         aria-haspopup="true"
         aria-expanded="false"
       >
-        <i class="fas fa-envelope fa-fw"></i>
-        <!-- Counter - Messages -->
-        <span class="badge badge-danger badge-counter">2</span>
+      <i class="fas fa-bell"></i>
+        <!-- Counter - Notifications -->
+        <span class="badge badge-counter" style="background-color: #0486db;">2</span>
       </a>
-      <!-- Dropdown - Messages -->
+      <!-- Dropdown - Notifications -->
       <div
         class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
         aria-labelledby="messagesDropdown"
       >
         <h6 class="dropdown-header">
-          CENTRE DE MESSAGERIE
+          Notification Center
         </h6>
         <ng-container>
           <a
@@ -36,7 +44,7 @@
             <div class="dropdown-list-image mr-3 ">
               <img
                 class="rounded-circle"
-                src="https://i.pravatar.cc/300"
+                src="../../../../assets/img/user.png"
                 style="width: 45px;height:45px;"
                 alt=""
               />
@@ -63,36 +71,132 @@
     <div class="topbar-divider d-none d-sm-block"></div>
 
     <!-- Nav Item - User Information -->
-    <li class="nav-item dropdown no-arrow">
-      <a class="nav-link dropdown-toggle" href="#">
+    <li class="nav-item dropdown no-arrow" ngbDropdown  placement="bottom-right">
+      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownProfile" role="button">
         <span class="mr-2 d-none d-lg-inline text-gray-600 small"
           >Bilel bilel</span
         >
         <img
           class="img-profile rounded-circle"
-          src="https://i.pravatar.cc/300"
+          src="../../../../assets/img/user.png"
         />
       </a>
       <!-- Dropdown - User Information -->
-      <div
-        class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-        aria-labelledby="userDropdown"
-      >
-        <a class="dropdown-item" href="#">
-          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-          Profile
-        </a>
-        <div class="dropdown-divider"></div>
-        <a
-          class="dropdown-item"
-          href="#"
-          data-toggle="modal"
-          data-target="#logoutModal"
-        >
-          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-          Logout
-        </a>
+      <div ngbDropdownMenu aria-labelledby="navbarDropdownProfile" class="medium-dropdown-menu" >
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()"><i class="fas fa-user-cog"> </i> Profile</a>
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()"><i class="fas fa-sign-out-alt"> </i> Logout</a>
       </div>
     </li>
+
+    <div class="topbar-divider d-none d-sm-block"></div>
+    
+        <!-- Languages Begin -->
+
+    <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
+      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownLanguage" role="button">
+        <i class="fas fa-globe-americas"></i>
+      </a>
+      <div ngbDropdownMenu aria-labelledby="navbarDropdownLanguage" class="small-dropdown-menu" >
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
+      </div>
+    </li>
+        <!-- Languages End -->
+
   </ul>
 </nav>
+
+<!--TOP NAV END-->
+
+<!-- BOTTOM NAV START -->
+
+<nav
+  class="navbar navbar-expand  topbar static-top second-nav"
+>
+<div class="container justify-content-center">
+  <ul class="navbar-nav">
+    
+    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
+      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
+        <span class="second-nav-spacing" > <img  src="../../../../assets/img/dashboard.png" style="width: 17px;height: auto;"></span>Dashboard
+      </a>
+      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
+      </div>
+    </li>
+ 
+   
+    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
+      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
+        <i class="fas fa-clipboard-list second-nav-spacing"></i>Orders
+      </a>
+      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
+      </div>
+    </li>
+ 
+  
+    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
+      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
+        <i class="fas fa-calendar-alt second-nav-spacing"></i>Scheduling
+      </a>
+      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
+      </div>
+    </li>
+ 
+   
+    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
+      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
+        <span class="second-nav-spacing" > <img  src="../../../../assets/img/printer.png" style="width: 18px;height: auto;"></span>Stations
+      </a>
+      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
+      </div>
+    </li>
+ 
+   
+    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
+      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
+        <i class="fas fa-dolly-flatbed second-nav-spacing"></i>Shipping
+      </a>
+      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
+      </div>
+    </li>
+ 
+
+    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
+      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
+        <span class="second-nav-spacing" > <img  src="../../../../assets/img/report.png" style="width: 17px;height: auto;"></span>Reports
+      </a>
+      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
+      </div>
+    </li>
+ 
+
+    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
+      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
+        <i class="fas fa-cogs second-nav-spacing"></i>Configurations
+      </a>
+      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
+      </div>
+    </li>
+ 
+
+
+  </ul>
+</div>
+</nav>
+
+
+<!-- BOTTOM NAV END -->
