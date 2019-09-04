@@ -1,0 +1,12 @@
+.footer {
+  background-color: #1f1641;
+  height: 75px;
+  color: #fff;
+  font-size: 14px;
+}
+.footer-copyright{
+    padding-top: 7px;
+}
+.footer a{
+    color:#fff;
+}

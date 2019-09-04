@@ -17,7 +17,8 @@ import { ShippingComponent } from './components/mainComponents/shipping/shipping
 import { ReportsComponent } from './components/mainComponents/reports/reports.component';
 import { ConfigurationsComponent } from './components/mainComponents/configurations/configurations.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './modules/material/material.module';
+import { MaterialModule } from './modules/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MaterialModule } from './modules/material/material.module';
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule  // material

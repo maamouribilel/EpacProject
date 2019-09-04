@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="breadcrumbs">
-  <div class="container">
+  <div class="container-fluid" style="width:95%;padding-top: 25px;">
     <h5>Orders</h5>
     <p id="breadcrumb">
       <a [routerLink]="['/']"><i class="fas fa-home"></i> Home </a>
@@ -10,54 +10,152 @@
   </div>
 </div>
 
-<br />
-<hr />
-<br />
-<div class="container-fluid">
-<mat-form-field>
-  <input
-    matInput
-    (keyup)="applyFilter($event.target.value)"
-    placeholder="Filter"
-  />
-</mat-form-field>
+<div class="container-fluid table-container">
+  <span style="padding-right: 25px;">Orders</span>
+  <mat-form-field>
+    <input
+      matInput
+      (keyup)="applyFilter($event.target.value)"
+      placeholder="Search"
+    />
+  </mat-form-field>
 
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef>No.</th>
-      <td mat-cell *matCellDef="let element">{{ element.position }}</td>
-    </ng-container>
+  <button
+    type="button"
+    class="btn dropdown-toggle"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+    mat-icon-button
+  >
+    <i class="fas fa-filter"></i>
+    <div class="dropdown-menu">
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-    </ng-container>
+        <mat-checkbox class="dropdown-item filter-checkbox" (click)="$event.stopPropagation();" >OrderId</mat-checkbox>
+        <mat-checkbox class="dropdown-item filter-checkbox" (click)="$event.stopPropagation();">Po</mat-checkbox>
+        <mat-checkbox class="dropdown-item filter-checkbox" (click)="$event.stopPropagation();">ISBN</mat-checkbox>
+        <mat-checkbox class="dropdown-item filter-checkbox" (click)="$event.stopPropagation();">Color</mat-checkbox>
+        <mat-checkbox class="dropdown-item filter-checkbox" (click)="$event.stopPropagation();">Due</mat-checkbox>
+        <mat-checkbox class="dropdown-item filter-checkbox" (click)="$event.stopPropagation();">Qty</mat-checkbox>
+        <mat-checkbox class="dropdown-item filter-checkbox" (click)="$event.stopPropagation();">Duration</mat-checkbox>
+        <mat-checkbox class="dropdown-item filter-checkbox" (click)="$event.stopPropagation();">Imposition</mat-checkbox>
+        <mat-checkbox class="dropdown-item filter-checkbox" (click)="$event.stopPropagation();">priority</mat-checkbox>
+        <mat-checkbox class="dropdown-item filter-checkbox" (click)="$event.stopPropagation();">Binding</mat-checkbox>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef>Weight</th>
-      <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
-    </ng-container>
+      </div>
+      
+  </button>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef>Symbol</th>
-      <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
-    </ng-container>
+  <button class="btn float-right table-add-btn" mat-icon-button>
+    <i class="fas fa-plus"></i>
+  </button>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
+  <div class="">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox
+            (change)="$event ? masterToggle() : null"
+            [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()"
+            [aria-label]="checkboxLabel()"
+          >
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox
+            (click)="$event.stopPropagation()"
+            (change)="$event ? selection.toggle(row) : null"
+            [checked]="selection.isSelected(row)"
+            [aria-label]="checkboxLabel(row)"
+          >
+          </mat-checkbox>
+        </td>
+      </ng-container>
+      <!-- Column -->
+      <ng-container matColumnDef="orderId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>OrderId</th>
+        <td mat-cell *matCellDef="let element">{{ element.orderId }}</td>
+      </ng-container>
 
-  <mat-paginator
-    [pageSizeOptions]="[5, 10, 20]"
-    showFirstLastButtons
-  ></mat-paginator>
-</div>
+      <!-- Column -->
+      <ng-container matColumnDef="po">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Po</th>
+        <td mat-cell *matCellDef="let element">{{ element.po }}</td>
+      </ng-container>
 
+      <!-- Column -->
+      <ng-container matColumnDef="isbn">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ISBN</th>
+        <td mat-cell *matCellDef="let element">{{ element.isbn }}</td>
+      </ng-container>
+
+      <!-- Column -->
+      <ng-container matColumnDef="color">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Color</th>
+        <td mat-cell *matCellDef="let element">{{ element.color }}</td>
+      </ng-container>
+
+      <!-- Column -->
+      <ng-container matColumnDef="due">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Due</th>
+        <td mat-cell *matCellDef="let element">{{ element.due }}</td>
+      </ng-container>
+
+      <!-- Column -->
+      <ng-container matColumnDef="qte">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          style="padding-left: 25px; padding-right: 25px;"
+        >
+          Qte
+        </th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          style="padding-left: 25px; padding-right: 25px;"
+        >
+          {{ element.qte }}
+        </td>
+      </ng-container>
+
+      <!-- Column -->
+      <ng-container matColumnDef="duration">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Duration</th>
+        <td mat-cell *matCellDef="let element">{{ element.duration }}</td>
+      </ng-container>
+
+      <!-- Column -->
+      <ng-container matColumnDef="imposition">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Imposition</th>
+        <td mat-cell *matCellDef="let element">{{ element.imposition }}</td>
+      </ng-container>
+
+      <!-- Column -->
+      <ng-container matColumnDef="priority">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Priority</th>
+        <td mat-cell *matCellDef="let element">{{ element.priority }}</td>
+      </ng-container>
+
+      <!-- Column -->
+      <ng-container matColumnDef="binding">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Binding</th>
+        <td mat-cell *matCellDef="let element">{{ element.binding }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
 </div>
 <br />
 <app-footer></app-footer>

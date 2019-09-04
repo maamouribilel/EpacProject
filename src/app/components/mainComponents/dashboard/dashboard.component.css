@@ -1,25 +1,47 @@
-.breadcrumbs{
-    height:170px;
-    background-color: #0486db;
-    color: #fff;
+.breadcrumbs {
+  height: 170px;
+  background-color: #0486db;
+  color: #fff;
 }
-div.breadcrumbs a{
-    color: #fff;
+div.breadcrumbs a {
+  color: #fff;
 }
-div.breadcrumbs div.container{
-    padding-top: 25px;
+div.breadcrumbs div.container {
+  padding-top: 25px;
 }
 table {
-    width: 100%;
-  }
+  width: 100%;
+}
 
-  
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  td, th {
-    width: 25%;
-  }
-  
+.mat-form-field {
+  font-size: 14px;
+  width: 80%;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+.table-container {
+  margin-top: -60px;
+  background-color: #fff;
+  border: 1px #fff solid;
+  border-radius: 20px;
+  width : 95%;
+}
+.table-radius{
+  border: 1px #fff solid;
+  border-radius: 20px;
+}
+
+.table-add-btn{
+  background-color: #05acd3;
+  color: #fff;
+  margin: 10px;
+  border : 1px solid;
+  border-radius: 50px;
+}
+.filter-checkbox{
+  margin: 0 20px;
+}
