@@ -19,6 +19,7 @@ export interface UserData {
 })
 export class DashboardComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  // tslint:disable-next-line: no-use-before-declare
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
