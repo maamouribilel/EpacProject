@@ -1,9 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+// angular material module
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+// forms modules
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
+// routing module
 import { AppRoutingModule } from './modules/app-routing.module';
+
+// components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/sharedComponents/header/header.component';
 import { FooterComponent } from './components/sharedComponents/footer/footer.component';
@@ -16,9 +22,21 @@ import { StationsComponent } from './components/mainComponents/stations/stations
 import { ShippingComponent } from './components/mainComponents/shipping/shipping.component';
 import { ReportsComponent } from './components/mainComponents/reports/reports.component';
 import { ConfigurationsComponent } from './components/mainComponents/configurations/configurations.component';
+// angular material modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
-import { HttpClientModule } from '@angular/common/http';
+// http modules
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+// import { TranslationModule, HttpLoaderFactory } from './modules/translate/translate.module';
+// translation modules
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// factory
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 
 @NgModule({
   declarations: [
@@ -42,7 +60,15 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule  // material
+    MaterialModule,  // material
+    TranslateModule.forRoot({
+      loader: {
+        provide : TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+   // TranslationModule // translation module
   ],
   providers: [],
   bootstrap: [AppComponent]

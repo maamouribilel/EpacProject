@@ -1,0 +1,15 @@
+{
+	"header": {
+		"logout": "Déconnexion",
+		"nav-configurations": "Configurations",
+		"nav-dashboard": "Tableau de bord",
+		"nav-orders": "Commandes",
+		"nav-reports": "Rapports",
+		"nav-scheduling": "Calendrier",
+		"nav-shipping": "Livraison",
+		"nav-stations": "Stations",
+		"notification-load-more": "Lire plus de messages",
+		"profile": "Profil",
+		"title": "Centre de notification"
+	}
+}

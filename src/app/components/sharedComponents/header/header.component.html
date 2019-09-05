@@ -32,8 +32,8 @@
         class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
         aria-labelledby="messagesDropdown"
       >
-        <h6 class="dropdown-header">
-          Notification Center
+        <h6 class="dropdown-header" translate>
+          {{ 'header.title'  | translate}}
         </h6>
         <ng-container>
           <a
@@ -63,7 +63,7 @@
         <a
           class="dropdown-item text-center small text-gray-500"
           routerLink="/admin/contacts"
-          >Read More Messages</a
+          >{{ 'header.notification-load-more' | translate }}</a
         >
       </div>
     </li>
@@ -83,8 +83,8 @@
       </a>
       <!-- Dropdown - User Information -->
       <div ngbDropdownMenu aria-labelledby="navbarDropdownProfile" class="medium-dropdown-menu" >
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()"><i class="fas fa-user-cog"> </i> Profile</a>
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()"><i class="fas fa-sign-out-alt"> </i> Logout</a>
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()"><i class="fas fa-user-cog"> </i> {{ 'header.profile' | translate }}</a>
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()"><i class="fas fa-sign-out-alt"> </i> {{'header.logout' | translate}}</a>
       </div>
     </li>
 
@@ -92,15 +92,25 @@
     
         <!-- Languages Begin -->
 
+
+
+
     <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
       <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownLanguage" role="button">
         <i class="fas fa-globe-americas"></i>
       </a>
+      <!--
       <div ngbDropdownMenu aria-labelledby="navbarDropdownLanguage" class="small-dropdown-menu" >
         <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
         <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
       </div>
+      -->
     </li>
+
+    <select matNativeControl id="mySelectedLanguage" #langSelect (change)="translate.use(langSelect.value)" (change)="onChangeLang(langSelect.value)">
+      <option *ngFor="let lang of translate.getLangs()" [value]="lang" >{{ lang | uppercase}}</option>
+    
+    </select>
         <!-- Languages End -->
 
   </ul>
@@ -118,7 +128,7 @@
     
     <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
       <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <span class="second-nav-spacing" > <img  src="../../../../assets/img/dashboard.png" style="width: 17px;height: auto;"></span>Dashboard
+        <span class="second-nav-spacing" > <img  src="../../../../assets/img/dashboard.png" style="width: 17px;height: auto;"></span>{{'header.nav-dashboard' | translate}}
       </a>
       <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
         <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
@@ -129,7 +139,7 @@
    
     <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
       <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <i class="fas fa-clipboard-list second-nav-spacing"></i>Orders
+        <i class="fas fa-clipboard-list second-nav-spacing"></i>{{'header.nav-orders' | translate}}
       </a>
       <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
         <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
@@ -140,7 +150,7 @@
   
     <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
       <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <i class="fas fa-calendar-alt second-nav-spacing"></i>Scheduling
+        <i class="fas fa-calendar-alt second-nav-spacing"></i>{{'header.nav-scheduling' | translate}}
       </a>
       <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
         <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
@@ -151,7 +161,7 @@
    
     <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
       <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <span class="second-nav-spacing" > <img  src="../../../../assets/img/printer.png" style="width: 18px;height: auto;"></span>Stations
+        <span class="second-nav-spacing" > <img  src="../../../../assets/img/printer.png" style="width: 18px;height: auto;"></span>{{'header.nav-stations' | translate}}
       </a>
       <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
         <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
@@ -162,7 +172,7 @@
    
     <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
       <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <i class="fas fa-dolly-flatbed second-nav-spacing"></i>Shipping
+        <i class="fas fa-dolly-flatbed second-nav-spacing"></i>{{'header.nav-shipping' | translate}}
       </a>
       <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
         <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
@@ -173,7 +183,7 @@
 
     <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
       <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <span class="second-nav-spacing" > <img  src="../../../../assets/img/report.png" style="width: 17px;height: auto;"></span>Reports
+        <span class="second-nav-spacing" > <img  src="../../../../assets/img/report.png" style="width: 17px;height: auto;"></span>{{'header.nav-reports' | translate}}
       </a>
       <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
         <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
@@ -184,7 +194,7 @@
 
     <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
       <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <i class="fas fa-cogs second-nav-spacing"></i>Configurations
+        <i class="fas fa-cogs second-nav-spacing"></i>{{'header.nav-configurations' | translate}}
       </a>
       <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
         <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>

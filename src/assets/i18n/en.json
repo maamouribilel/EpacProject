@@ -1,0 +1,15 @@
+{
+	"header": {
+		"logout": "Sign out",
+		"nav-configurations": "Configurations",
+		"nav-dashboard": "Dashboard",
+		"nav-orders": "Orders",
+		"nav-reports": "Reports",
+		"nav-scheduling": "Scheduling",
+		"nav-shipping": "Shipping",
+		"nav-stations": "Stations",
+		"notification-load-more": "Read More Messages",
+		"profile": "Profile",
+		"title": "NOTIFICATION CENTER"
+	}
+}
