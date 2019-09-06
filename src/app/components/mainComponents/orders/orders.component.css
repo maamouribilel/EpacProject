@@ -1,0 +1,91 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 85%;
+}
+.columns-filter-btn {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+.table-container {
+  margin-top: -60px;
+  background-color: #fff;
+  border: 1px #fff solid;
+  border-radius: 20px;
+  width: 95%;
+}
+.table-radius {
+  border: 1px #fff solid;
+  border-radius: 20px;
+}
+
+.table-add-btn {
+  background-color: #05acd3;
+  color: #fff;
+  margin: 10px;
+  border: 1px solid;
+  border-radius: 50px;
+}
+.filter-checkbox {
+  margin: 0 20px;
+}
+
+.mat-column-orderid {
+  width: 50px !important;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.mat-column-checkbox {
+  width: 50px !important;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.mat-column-po {
+  width: 60px !important;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.mat-column-isbn {
+  width: 60px !important;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.mat-column-color {
+  width: 40px !important;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.mat-column-qty {
+  width: 40px !important;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.mat-column-duration {
+  width: 50px !important;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.mat-column-impo {
+  width: 50px !important;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.mat-column-priority {
+  width: 50px !important;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.mat-column-binding {
+  width: 50px !important;
+  padding-left: 25px;
+  padding-right: 25px;
+}

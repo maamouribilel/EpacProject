@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // forms modules
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // routing module
 import { AppRoutingModule } from './modules/app-routing.module';
@@ -37,7 +37,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,22 +52,23 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReportsComponent,
     ConfigurationsComponent
   ],
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule,  // material
+    MaterialModule, // material
     TranslateModule.forRoot({
       loader: {
-        provide : TranslateLoader,
+        provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    }),
-   // TranslationModule // translation module
+    })
+    // TranslationModule // translation module
   ],
   providers: [],
   bootstrap: [AppComponent]

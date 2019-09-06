@@ -1,13 +1,14 @@
-
 <!-- TOP NAV START-->
-<nav
-  class="navbar navbar-expand navbar-light bg-white topbar static-top"
->
-    <!-- BRAND -->
-<a class="navbar-brand" href="#">
-  <img src="../../../../assets/img/PaceX.png" alt="PaceX" style="height: 45px;">
-</a>
- <!-- BRAND -->
+<nav class="navbar navbar-expand navbar-light bg-white topbar static-top">
+  <!-- BRAND -->
+  <a class="navbar-brand" href="#">
+    <img
+      src="../../../../assets/img/PaceX.png"
+      alt="PaceX"
+      style="height: 45px;"
+    />
+  </a>
+  <!-- BRAND -->
 
   <!-- Topbar Navbar -->
   <ul class="navbar-nav ml-auto">
@@ -23,9 +24,11 @@
         aria-haspopup="true"
         aria-expanded="false"
       >
-      <i class="fas fa-bell"></i>
+        <i class="fas fa-bell"></i>
         <!-- Counter - Notifications -->
-        <span class="badge badge-counter" style="background-color: #0486db;">2</span>
+        <span class="badge badge-counter" style="background-color: #0486db;"
+          >2</span
+        >
       </a>
       <!-- Dropdown - Notifications -->
       <div
@@ -33,7 +36,7 @@
         aria-labelledby="messagesDropdown"
       >
         <h6 class="dropdown-header" translate>
-          {{ 'header.title'  | translate}}
+          {{ 'header.title' | translate }}
         </h6>
         <ng-container>
           <a
@@ -71,8 +74,14 @@
     <div class="topbar-divider d-none d-sm-block"></div>
 
     <!-- Nav Item - User Information -->
-    <li class="nav-item dropdown no-arrow" ngbDropdown  placement="bottom-right">
-      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownProfile" role="button">
+    <li class="nav-item dropdown no-arrow" ngbDropdown placement="bottom-right">
+      <a
+        class="nav-link"
+        style="cursor: pointer"
+        ngbDropdownToggle
+        id="navbarDropdownProfile"
+        role="button"
+      >
         <span class="mr-2 d-none d-lg-inline text-gray-600 small"
           >Bilel bilel</span
         >
@@ -82,37 +91,53 @@
         />
       </a>
       <!-- Dropdown - User Information -->
-      <div ngbDropdownMenu aria-labelledby="navbarDropdownProfile" class="medium-dropdown-menu" >
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()"><i class="fas fa-user-cog"> </i> {{ 'header.profile' | translate }}</a>
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()"><i class="fas fa-sign-out-alt"> </i> {{'header.logout' | translate}}</a>
+      <div
+        ngbDropdownMenu
+        aria-labelledby="navbarDropdownProfile"
+        class="medium-dropdown-menu"
+      >
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()"
+          ><i class="fas fa-user-cog"> </i>
+          {{ 'header.profile' | translate }}</a
+        >
+        <a class="dropdown-item" href="#" (click)="$event.preventDefault()"
+          ><i class="fas fa-sign-out-alt"> </i>
+          {{ 'header.logout' | translate }}</a
+        >
       </div>
     </li>
 
     <div class="topbar-divider d-none d-sm-block"></div>
-    
-        <!-- Languages Begin -->
 
-
-
+    <!-- Languages Begin -->
 
     <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
-      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownLanguage" role="button">
+      <a
+        (click)="langSelect.click()"
+        class="nav-link"
+        ngbDropdownToggle
+        id="navbarDropdownLanguage"
+        role="button"
+      >
         <i class="fas fa-globe-americas"></i>
       </a>
-      <!--
-      <div ngbDropdownMenu aria-labelledby="navbarDropdownLanguage" class="small-dropdown-menu" >
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
-      </div>
-      -->
     </li>
+    <ng-container [formGroup]="languageForm">
+      <select
+        formControlName="langSelect"
+        matNativeControl
+        id="mySelectedLanguage"
+        #langSelect
+        (change)="translate.use(langSelect.value)"
+        (change)="onChangeLang(langSelect.value)"
+      >
+        <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{
+          lang | uppercase
+        }}</option>
+      </select>
+    </ng-container>
 
-    <select matNativeControl id="mySelectedLanguage" #langSelect (change)="translate.use(langSelect.value)" (change)="onChangeLang(langSelect.value)">
-      <option *ngFor="let lang of translate.getLangs()" [value]="lang" >{{ lang | uppercase}}</option>
-    
-    </select>
-        <!-- Languages End -->
-
+    <!-- Languages End -->
   </ul>
 </nav>
 
@@ -120,93 +145,212 @@
 
 <!-- BOTTOM NAV START -->
 
-<nav
-  class="navbar navbar-expand  topbar static-top second-nav"
->
-<div class="container justify-content-center">
-  <ul class="navbar-nav">
-    
-    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
-      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <span class="second-nav-spacing" > <img  src="../../../../assets/img/dashboard.png" style="width: 17px;height: auto;"></span>{{'header.nav-dashboard' | translate}}
-      </a>
-      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
-      </div>
-    </li>
- 
-   
-    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
-      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <i class="fas fa-clipboard-list second-nav-spacing"></i>{{'header.nav-orders' | translate}}
-      </a>
-      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
-      </div>
-    </li>
- 
-  
-    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
-      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <i class="fas fa-calendar-alt second-nav-spacing"></i>{{'header.nav-scheduling' | translate}}
-      </a>
-      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
-      </div>
-    </li>
- 
-   
-    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
-      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <span class="second-nav-spacing" > <img  src="../../../../assets/img/printer.png" style="width: 18px;height: auto;"></span>{{'header.nav-stations' | translate}}
-      </a>
-      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
-      </div>
-    </li>
- 
-   
-    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
-      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <i class="fas fa-dolly-flatbed second-nav-spacing"></i>{{'header.nav-shipping' | translate}}
-      </a>
-      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
-      </div>
-    </li>
- 
+<nav class="navbar navbar-expand  topbar static-top second-nav">
+  <div class="container justify-content-center">
+    <ul class="navbar-nav">
+      <li
+        class="nav-item second-nav-item second-nav-item-spacing "
+        ngbDropdown
+        display="dynamic"
+        placement="bottom-right"
+      >
+        <a
+          class="nav-link nav-link-colors"
+          [routerLink]="['']"
+          routerLinkActive="router-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <span class="second-nav-spacing">
+            <img
+              src="../../../../assets/img/dashboard.png"
+              style="width: 17px;height: auto;"/></span
+          >{{ 'header.nav-dashboard' | translate }}
+        </a>
+      </li>
 
-    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
-      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <span class="second-nav-spacing" > <img  src="../../../../assets/img/report.png" style="width: 17px;height: auto;"></span>{{'header.nav-reports' | translate}}
-      </a>
-      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
-      </div>
-    </li>
- 
+      <li
+        class="nav-item second-nav-item second-nav-item-spacing "
+        ngbDropdown
+        display="dynamic"
+        placement="bottom-right"
+        routerLinkActive="router-link-active"
+      >
+        <a
+          class="nav-link nav-link-colors"
+          style="cursor: pointer"
+          ngbDropdownToggle
+          id="navbarDropdownDash"
+          role="button"
+        >
+          <i class="fas fa-clipboard-list second-nav-spacing"></i
+          >{{ 'header.nav-orders' | translate }}
+        </a>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdownDash">
+          <a
+            class="dropdown-item"
+            [routerLink]="['/orders']"
+            routerLinkActive="inner-router-link-active"
+            (click)="$event.preventDefault()"
+            >{{ 'header.nav-orders-acceptance' | translate }}</a
+          >
+          <a
+            class="dropdown-item"
+            [routerLink]="['/orders']"
+            routerLinkActive="inner-router-link-active"
+            (click)="$event.preventDefault()"
+            >{{ 'header.nav-orders-overview' | translate }}</a
+          >
+        </div>
+      </li>
+      <li class="nav-item second-nav-item second-nav-item-spacing ">
+        <a
+          class="nav-link nav-link-colors"
+          routerLink="/scheduling"
+          routerLinkActive="router-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <i class="fas fa-calendar-alt second-nav-spacing"></i
+          >{{ 'header.nav-scheduling' | translate }}
+        </a>
+      </li>
 
-    <li class="nav-item second-nav-item second-nav-item-spacing " ngbDropdown display="dynamic" placement="bottom-right">
-      <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdownDash" role="button">
-        <i class="fas fa-cogs second-nav-spacing"></i>{{'header.nav-configurations' | translate}}
-      </a>
-      <div ngbDropdownMenu aria-labelledby="navbarDropdownDash" class="small-dropdown-menu" >
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">EN</a>
-        <a class="dropdown-item" href="#" (click)="$event.preventDefault()">FR</a>
-      </div>
-    </li>
- 
+      <li
+        class="nav-item second-nav-item second-nav-item-spacing "
+        ngbDropdown
+        display="dynamic"
+        placement="bottom-right"
+        routerLinkActive="router-link-active"
+      >
+        <a
+          class="nav-link nav-link-colors"
+          style="cursor: pointer"
+          ngbDropdownToggle
+          id="navbarDropdownStations"
+          role="button"
+        >
+          <span class="second-nav-spacing">
+            <img
+              src="../../../../assets/img/printer.png"
+              style="width: 18px;height: auto;"/></span
+          >{{ 'header.nav-stations' | translate }}
+        </a>
+        <div
+          ngbDropdownMenu
+          aria-labelledby="navbarDropdownStations"
+          class="small-dropdown-menu"
+        >
+          <a
+            class="dropdown-item"
+            [routerLink]="['/stations']"
+            routerLinkActive="inner-router-link-active"
+            (click)="$event.preventDefault()"
+            >Link</a
+          >
+        </div>
+      </li>
 
+      <li
+        class="nav-item second-nav-item second-nav-item-spacing "
+        ngbDropdown
+        display="dynamic"
+        placement="bottom-right"
+        routerLinkActive="router-link-active"
+      >
+        <a
+          class="nav-link nav-link-colors"
+          style="cursor: pointer"
+          ngbDropdownToggle
+          id="navbarDropdownShipping"
+          role="button"
+          routerLinkActive="router-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <i class="fas fa-dolly-flatbed second-nav-spacing"></i
+          >{{ 'header.nav-shipping' | translate }}
+        </a>
+        <div
+          ngbDropdownMenu
+          aria-labelledby="navbarDropdownShipping"
+          class="small-dropdown-menu"
+        >
+          <a
+            class="dropdown-item"
+            [routerLink]="['/shipping']"
+            routerLinkActive="inner-router-link-active"
+            (click)="$event.preventDefault()"
+            >Link</a
+          >
+        </div>
+      </li>
 
-  </ul>
-</div>
+      <li
+        class="nav-item second-nav-item second-nav-item-spacing "
+        ngbDropdown
+        display="dynamic"
+        placement="bottom-right"
+        routerLinkActive="router-link-active"
+      >
+        <a
+          class="nav-link nav-link-colors"
+          style="cursor: pointer"
+          ngbDropdownToggle
+          id="navbarDropdownReports"
+          role="button"
+        >
+          <span class="second-nav-spacing">
+            <img
+              src="../../../../assets/img/report.png"
+              style="width: 17px;height: auto;"/></span
+          >{{ 'header.nav-reports' | translate }}
+        </a>
+        <div
+          ngbDropdownMenu
+          aria-labelledby="navbarDropdownReports"
+          class="small-dropdown-menu"
+        >
+          <a
+            class="dropdown-item"
+            [routerLink]="['/reports']"
+            routerLinkActive="inner-router-link-active"
+            (click)="$event.preventDefault()"
+            >Link</a
+          >
+        </div>
+      </li>
+
+      <li
+        class="nav-item second-nav-item second-nav-item-spacing "
+        ngbDropdown
+        display="dynamic"
+        placement="bottom-right"
+        routerLinkActive="router-link-active"
+      >
+        <a
+          class="nav-link nav-link-colors"
+          style="cursor: pointer"
+          ngbDropdownToggle
+          id="navbarDropdownConfig"
+          role="button"
+        >
+          <i class="fas fa-cogs second-nav-spacing"></i
+          >{{ 'header.nav-configurations' | translate }}
+        </a>
+        <div
+          ngbDropdownMenu
+          aria-labelledby="navbarDropdownConfig"
+          class="small-dropdown-menu"
+        >
+          <a
+            class="dropdown-item"
+            [routerLink]="['/configurations']"
+            (click)="$event.preventDefault()"
+            routerLinkActive="inner-router-link-active"
+            >Link</a
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
 </nav>
-
 
 <!-- BOTTOM NAV END -->

@@ -1,9 +1,17 @@
 {
+	"breadcrumb": {
+		"home": "Home"
+	},
+	"footer": {
+		"copyright": "© Copyright By EPAC Technologies 2015-2019"
+	},
 	"header": {
 		"logout": "Sign out",
 		"nav-configurations": "Configurations",
 		"nav-dashboard": "Dashboard",
 		"nav-orders": "Orders",
+		"nav-orders-acceptance": "Acceptance",
+		"nav-orders-overview": "Overview",
 		"nav-reports": "Reports",
 		"nav-scheduling": "Scheduling",
 		"nav-shipping": "Shipping",
@@ -11,5 +19,22 @@
 		"notification-load-more": "Read More Messages",
 		"profile": "Profile",
 		"title": "NOTIFICATION CENTER"
+	},
+	"material-table": {
+		"search": "search"
+	},
+	"order-table": {
+		"binding": "Binding",
+		"color": "Color",
+		"due": "Due Date",
+		"duration": "Duration",
+		"imposition": "Impo",
+		"isbn": "ISBN",
+		"order-id": "OrderId",
+		"po": "Po",
+		"priority": "Priority",
+		"quantity": "Qty",
+		"search": "Search",
+		"title": "Orders"
 	}
 }

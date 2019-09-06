@@ -12,42 +12,52 @@
   color: #fff !important;
 }
 .second-nav-item:hover {
-  background-color: #012172;
-  color: #fff;
+  border-bottom: 1px white solid;
 }
 .second-nav-spacing {
   padding-right: 10px;
 }
-.language-select{
+.language-select {
   margin-top: 16px;
+}
+.router-link-active {
+  /* background-color: #012172 !important; */
+  color: #fff !important;
+  border-bottom: 1px #fff solid;
+}
+.inner-router-link-active {
+  background-color: #012172 !important;
+  color: #fff !important;
+}
+.nav-link-colors {
+  color: #fff;
+  background-color: #1f1641;
 }
 
 /* SMALL */
 @media (min-width: 768px) and (max-width: 991px) {
-
 }
 
 /* MEDIUM */
 @media (min-width: 992px) and (max-width: 1199px) {
-    .second-nav-item-spacing {
-        padding-left: 2px;
-        padding-right: 2px;
-    }
+  .second-nav-item-spacing {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
 }
 
 /* LARGE */
 @media (min-width: 1200px) and (max-width: 1400px) {
-    .second-nav-item-spacing {
-        padding-left: 35px;
-        padding-right: 35px;
-    }
+  .second-nav-item-spacing {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
 }
 
 /* EXTRA LARGE */
 @media (min-width: 1441px) and (max-width: 2560px) {
   .second-nav-item-spacing {
-      padding-left: 85px;
-      padding-right: 85px;
+    padding-left: 85px;
+    padding-right: 85px;
   }
 }
-

@@ -1,15 +1,40 @@
 {
+	"breadcrumb": {
+		"home": "Accueil"
+	},
+	"footer": {
+		"copyright": "© Copyright Par EPAC Technologies 2015-2019"
+	},
 	"header": {
 		"logout": "Déconnexion",
 		"nav-configurations": "Configurations",
-		"nav-dashboard": "Tableau de bord",
+		"nav-dashboard": "Dashboard",
 		"nav-orders": "Commandes",
+		"nav-orders-acceptance": "Acceptation",
+		"nav-orders-overview": "Aperçu",
 		"nav-reports": "Rapports",
-		"nav-scheduling": "Calendrier",
+		"nav-scheduling": "Planification",
 		"nav-shipping": "Livraison",
 		"nav-stations": "Stations",
 		"notification-load-more": "Lire plus de messages",
 		"profile": "Profil",
 		"title": "Centre de notification"
+	},
+	"material-table": {
+		"search": "Chercher"
+	},
+	"order-table": {
+		"binding": "Binding",
+		"color": "Couleur",
+		"due": "Date de livraison",
+		"duration": "Durée",
+		"imposition": "Impo",
+		"isbn": "ISBN",
+		"order-id": "OrderId",
+		"po": "Po",
+		"priority": "Priorité",
+		"quantity": "Qté",
+		"search": "Chercher",
+		"title": "Commandes"
 	}
 }

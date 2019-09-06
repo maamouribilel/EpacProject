@@ -1,1 +1,17 @@
-<p>configurations works!</p>
+<app-header></app-header>
+
+<div class="breadcrumbs">
+  <div class="container-fluid breadcrumbs-container">
+    <h5>Configurations</h5>
+    <p id="breadcrumb">
+      <a [routerLink]="['/']"
+        ><i class="fas fa-home"></i> {{ 'breadcrumb.home' | translate }}
+      </a>
+      <span> > </span> Configurations
+    </p>
+  </div>
+</div>
+
+<div class="container-fluid content-container"></div>
+<br />
+<app-footer></app-footer>

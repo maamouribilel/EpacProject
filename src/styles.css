@@ -42,5 +42,29 @@
 }
 /* Loading Spinner End */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* Breadcrumb styling */
+.breadcrumbs {
+  height: 170px;
+  background-color: #0486db;
+  color: #fff;
+}
+div.breadcrumbs a {
+  color: #fff;
+}
+div.breadcrumbs div.container {
+  padding-top: 25px;
+}
+
+.breadcrumbs-container {
+  width: 95%;
+  padding-top: 25px;
+}

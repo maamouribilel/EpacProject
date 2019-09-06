@@ -11,7 +11,7 @@ import { ConfigurationsComponent } from '../components/mainComponents/configurat
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'orders', component: OrdersComponent },
-  { path: 'shcheduling', component: SchedulingComponent },
+  { path: 'scheduling', component: SchedulingComponent },
   { path: 'stations', component: StationsComponent },
   { path: 'shipping', component: ShippingComponent },
   { path: 'reports', component: ReportsComponent },

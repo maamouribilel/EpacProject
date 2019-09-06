@@ -16,11 +16,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
-        provide : TranslateLoader,
+        provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
     })
   ]
 })
-export class TranslationModule { }
+export class TranslationModule {}
