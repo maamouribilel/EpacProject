@@ -39,53 +39,63 @@ th {
   margin: 0 20px;
 }
 
-.mat-column-orderid {
-  width: 50px !important;
-  padding-left: 25px;
-  padding-right: 25px;
+.mat-column-orderId {
+  flex: 0 0 5%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
-.mat-column-checkbox {
-  width: 50px !important;
-  padding-left: 25px;
-  padding-right: 25px;
+.mat-column-orderId {
+  flex: 0 0 5%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.mat-column-select {
+  flex: 0 0 10%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .mat-column-po {
-  width: 60px !important;
-  padding-left: 25px;
-  padding-right: 25px;
+  flex: 0 0 10%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .mat-column-isbn {
-  width: 60px !important;
-  padding-left: 25px;
-  padding-right: 25px;
+  flex: 0 0 10%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .mat-column-color {
-  width: 40px !important;
-  padding-left: 25px;
-  padding-right: 25px;
+  flex: 0 0 10%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
-.mat-column-qty {
-  width: 40px !important;
-  padding-left: 25px;
-  padding-right: 25px;
+.mat-column-due {
+  flex: 0 0 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.mat-column-qte {
+  flex: 0 0 10%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .mat-column-duration {
-  width: 50px !important;
-  padding-left: 25px;
-  padding-right: 25px;
+  flex: 0 0 10%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .mat-column-impo {
-  width: 50px !important;
-  padding-left: 25px;
-  padding-right: 25px;
+  flex: 0 0 10%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .mat-column-priority {
-  width: 50px !important;
-  padding-left: 25px;
-  padding-right: 25px;
+  flex: 0 0 10%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .mat-column-binding {
-  width: 50px !important;
-  padding-left: 25px;
-  padding-right: 25px;
+  flex: 0 0 10%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
